@@ -10,10 +10,9 @@ export class WordsService {
   }
 
   generateWordMessage(word: Word) {
-    const message = `
-      *${word.arabic}* \\- ${word.transliteration}
-      
-      ||${word.hebrew}||`;
+    const message = `*${word.arabic}* \\- ${word.transliteration}
+
+||${word.hebrew}||`;
 
     return message;
   }
