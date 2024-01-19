@@ -1,0 +1,21 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@lib/words/(.*)": "<rootDir>/../libs/words/src/$1",
+    "@lib/words": "<rootDir>/../libs/words/src",
+    "lib/telegram/(.*)": "<rootDir>/../libs/telegram/src/$1",
+    "lib/telegram": "<rootDir>/../libs/telegram/src",
+    "lib/telegram-client/(.*)": "<rootDir>/../libs/telegram-client/src/$1",
+    "lib/telegram-client": "<rootDir>/../libs/telegram-client/src"
+  }
+}
