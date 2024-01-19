@@ -14,7 +14,8 @@ export class RemindersService {
   ) {}
 
   // every hour from 8:00 to 22:00 israel time
-  @Cron('0 0 8-22 * * *', { timeZone: 'Asia/Jerusalem' })
+  //   @Cron('0 0 8-22 * * *', {
+  @Cron('0 0 * * * *', { timeZone: 'Asia/Jerusalem' })
   async sendWordToAllSubscribers() {
     this.logger.log(`Sending word to subscribed users`);
     const users = await this.usersService.getAll();

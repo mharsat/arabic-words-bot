@@ -4,7 +4,12 @@ import { InjectBot } from 'nestjs-telegraf';
 
 @Injectable()
 export class TelegramService {
-  constructor(@InjectBot() private bot: Telegraf) {}
+  constructor(@InjectBot() private bot: Telegraf) {
+    this.bot.telegram.setMyCommands([
+      { command: 'new_word', description: 'מילה חדשה' },
+      { command: 'who_am_i', description: 'אודות' },
+    ]);
+  }
 
   private readonly logger = new Logger(TelegramService.name);
 

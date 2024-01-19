@@ -28,6 +28,12 @@ export class BotStart {
     }
   }
 
+  @Command('new_word')
+  async sendNewWord(@Ctx() ctx: TelegrafContext) {
+    const wordMessage = this.wordsService.getRandomWordMessage();
+    await ctx.replyWithMarkdownV2(wordMessage);
+  }
+
   @Command('who_am_i')
   async whoAmI(@Ctx() ctx: TelegrafContext) {
     ctx.reply('מרחבא, אני אשלח לך מילים בערבית לתרגול יום יומי.');
