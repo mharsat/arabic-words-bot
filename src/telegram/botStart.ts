@@ -38,7 +38,7 @@ export class BotStart {
   }
 
   @Command('change_frequency')
-  async changeReminder(@Ctx() ctx: TelegrafContext) {
+  async changeFrequency(@Ctx() ctx: TelegrafContext) {
     await ctx.reply('באיזה תדירות תרצה לקבל מילים לתרגול?', {
       reply_markup: {
         inline_keyboard: Object.entries(ReminderFrequencyOptions).map(
