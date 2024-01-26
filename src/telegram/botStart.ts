@@ -1,8 +1,11 @@
-import { Update, Ctx, Start, Command } from 'nestjs-telegraf';
+import { Update, Ctx, Start, Command, On } from 'nestjs-telegraf';
 import { Context as TelegrafContext } from 'telegraf';
 import { WordsService } from '@lib/words';
 import { UsersService } from 'src/users/users.service';
 import { Logger } from '@nestjs/common';
+import { DataQueryUpdate } from './telegram.types';
+import { ReminderFrequency } from 'src/users/dal/users.dto';
+import { ReminderFrequencyOptions } from './consts';
 
 @Update()
 export class BotStart {
@@ -14,7 +17,7 @@ export class BotStart {
 
   @Start()
   async start(@Ctx() ctx: TelegrafContext) {
-    await ctx.reply('מרחבא, אני אשלח לך מידי פעם מילים לתרגול בערבית.');
+    await ctx.reply('מרחבא 🪬 אני אשלח לך מידי יום מילה לתרגול בערבית.');
     await ctx.reply('הנה המילה הראשונה שלך:');
     const firstWordMessage = this.wordsService.getRandomWordMessage();
     await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -34,36 +37,39 @@ export class BotStart {
     await ctx.replyWithMarkdownV2(wordMessage);
   }
 
-  @Command('change_reminder')
+  @Command('change_frequency')
   async changeReminder(@Ctx() ctx: TelegrafContext) {
     await ctx.reply('באיזה תדירות תרצה לקבל מילים לתרגול?', {
       reply_markup: {
-        inline_keyboard: [
-          [
+        inline_keyboard: Object.entries(ReminderFrequencyOptions).map(
+          ([key, option]) => [
             {
-              text: 'פעם ביום 👍🏼',
-              callback_data: 'DAILY',
+              text: `${option.text} ${option.emoji}`,
+              callback_data: key,
             },
           ],
-          [
-            {
-              text: 'כל שעה 🇸🇦👳🏻‍♂️',
-              callback_data: 'HOURLY',
-            },
-          ],
-          [
-            {
-              text: '3 פעמים ביום 🤯',
-              callback_data: 'THREE_TIMES_A_DAY',
-            },
-          ],
-        ],
+        ),
       },
     });
   }
 
-  @Command('who_am_i')
-  async whoAmI(@Ctx() ctx: TelegrafContext) {
-    ctx.reply('מרחבא, אני אשלח לך מילים בערבית לתרגול יום יומי.');
+  @On('callback_query')
+  async onCallbackQuery(
+    @Ctx()
+    ctx: TelegrafContext<DataQueryUpdate>,
+  ) {
+    const { data } = ctx.callbackQuery;
+    const chatId = ctx.chat.id;
+
+    if (
+      Object.keys(ReminderFrequencyOptions).includes(data as ReminderFrequency)
+    ) {
+      await this.usersService.updateByChatId(chatId, {
+        reminderFrequency: data as ReminderFrequency,
+      });
+      await ctx.reply(
+        `מעכשיו אשלח מילה חדשה ${ReminderFrequencyOptions[data].text}`,
+      );
+    }
   }
 }

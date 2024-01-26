@@ -2,7 +2,7 @@ import { WordsService } from '@lib/words';
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
 import { TelegramService } from 'src/telegram/telegram.service';
-import { ReminderPreference } from 'src/users/dal/users.dto';
+import { ReminderFrequency } from 'src/users/dal/users.dto';
 import { UsersService } from 'src/users/users.service';
 
 @Injectable()
@@ -14,21 +14,19 @@ export class RemindersService {
     private readonly usersService: UsersService,
   ) {}
 
-  shouldRemindUser(reminderPreference: ReminderPreference): boolean {
-    // const theHour = new Date().getHours();
-    // get current hour in Asia/Jerusalem timezone in two didits format
+  shouldRemindUser(reminderFrequency: ReminderFrequency): boolean {
     const theHour = new Date().toLocaleString('he-IL', {
       timeZone: 'Asia/Jerusalem',
       hour12: false,
       hour: 'numeric',
     });
-    if (reminderPreference === ReminderPreference.HOURLY) {
+    if (reminderFrequency === ReminderFrequency.HOURLY) {
       return true;
     }
-    if (reminderPreference === ReminderPreference.DAILY) {
+    if (reminderFrequency === ReminderFrequency.DAILY) {
       return theHour === '8';
     }
-    if (reminderPreference === ReminderPreference.THREE_TIMES_A_DAY) {
+    if (reminderFrequency === ReminderFrequency.THREE_TIMES_A_DAY) {
       return ['8', '14', '20'].includes(theHour);
     }
   }
@@ -42,8 +40,8 @@ export class RemindersService {
 
     await Promise.allSettled(
       users.map(async (user) => {
-        const { chatId, reminderPreference } = user;
-        const shouldRemind = this.shouldRemindUser(reminderPreference);
+        const { chatId, reminderFrequency } = user;
+        const shouldRemind = this.shouldRemindUser(reminderFrequency);
         if (shouldRemind) {
           await this.telegramService.sendMarkdownMessage(chatId, message);
         }

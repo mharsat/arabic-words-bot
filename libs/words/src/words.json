@@ -213,5 +213,55 @@
         "transliteration": "רַבִּיע",
         "arabic": "رَبِيع",
         "hebrew": "אביב"
+    },
+    {
+        "transliteration": "فَرْق",
+        "arabic": "פרק",
+        "hebrew": "הבדל"
+    },
+    {
+        "transliteration": "شكِل",
+        "arabic": "שכל",
+        "hebrew": "אופן, צורה"
+    },
+    {
+        "transliteration": "عامّ",
+        "arabic": "עאם",
+        "hebrew": "כללי"
+    },
+    {
+        "transliteration": "بشِكْل عامّ",
+        "arabic": "בשכל עאם",
+        "hebrew": "באופן כללי"
+    },
+    {
+        "transliteration": "وَاضِح",
+        "arabic": "ואצ'ח",
+        "hebrew": "ברור"
+    },
+    {
+        "transliteration": "ضيف",
+        "arabic": "צ'יף",
+        "hebrew": "אורח"
+    },
+    {
+        "transliteration": "جُمْلِة",
+        "arabic": "ג'מלה",
+        "hebrew": "משפט"
+    },
+    {
+        "transliteration": "سَطْر",
+        "arabic": "סטר",
+        "hebrew": "שורה"
+    },
+    {
+        "transliteration": "ذَكِي",
+        "arabic": "ד'כי",
+        "hebrew": "חכם, טעים"
+    },
+    {
+        "transliteration": "صاحِب / صْحَاب",
+        "arabic": "צאחב / צחאב",
+        "hebrew": "חבר / חברים"
     }
 ]

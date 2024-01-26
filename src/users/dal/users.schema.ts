@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Types } from 'mongoose';
-import { ReminderPreference } from './users.dto';
+import { ReminderFrequency } from './users.dto';
 
 @Schema({ _id: true, id: true, timestamps: true })
 export class User {
@@ -12,10 +12,10 @@ export class User {
 
   @Prop({
     type: String,
-    enum: Object.values(ReminderPreference),
-    default: ReminderPreference.DAILY,
+    enum: Object.values(ReminderFrequency),
+    default: ReminderFrequency.DAILY,
   })
-  reminderPreference: ReminderPreference;
+  reminderFrequency: ReminderFrequency;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
