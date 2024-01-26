@@ -34,6 +34,34 @@ export class BotStart {
     await ctx.replyWithMarkdownV2(wordMessage);
   }
 
+  @Command('change_reminder')
+  async changeReminder(@Ctx() ctx: TelegrafContext) {
+    await ctx.reply('באיזה תדירות תרצה לקבל מילים לתרגול?', {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: 'פעם ביום 👍🏼',
+              callback_data: 'DAILY',
+            },
+          ],
+          [
+            {
+              text: 'כל שעה 🇸🇦👳🏻‍♂️',
+              callback_data: 'HOURLY',
+            },
+          ],
+          [
+            {
+              text: '3 פעמים ביום 🤯',
+              callback_data: 'THREE_TIMES_A_DAY',
+            },
+          ],
+        ],
+      },
+    });
+  }
+
   @Command('who_am_i')
   async whoAmI(@Ctx() ctx: TelegrafContext) {
     ctx.reply('מרחבא, אני אשלח לך מילים בערבית לתרגול יום יומי.');

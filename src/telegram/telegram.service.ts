@@ -8,6 +8,8 @@ export class TelegramService {
     this.bot.telegram.setMyCommands([
       { command: 'new_word', description: 'מילה חדשה' },
       { command: 'who_am_i', description: 'אודות' },
+      { command: 'change_reminder', description: 'שינוי תדירות' },
+      { command: 'start', description: 'התחלה' },
     ]);
   }
 
