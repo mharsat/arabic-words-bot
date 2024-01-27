@@ -17,11 +17,12 @@ export class BotStart {
 
   @Start()
   async start(@Ctx() ctx: TelegrafContext) {
-    await ctx.reply('מרחבא 🪬 אני אשלח לך מידי יום מילה לתרגול בערבית.');
+    await ctx.replyWithMarkdownV2(
+      'מרחבא 🪬\nאני אשלח לך מידי יום מילה לתרגול בערבית',
+    );
     await ctx.reply('הנה המילה הראשונה שלך:');
     const firstWordMessage = this.wordsService.getRandomWordMessage();
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     await ctx.replyWithMarkdownV2(firstWordMessage);
 
     try {
@@ -59,17 +60,20 @@ export class BotStart {
     ctx: TelegrafContext<DataQueryUpdate>,
   ) {
     const { data } = ctx.callbackQuery;
+    const frequency = data as ReminderFrequency;
     const chatId = ctx.chat.id;
 
-    if (
-      Object.keys(ReminderFrequencyOptions).includes(data as ReminderFrequency)
-    ) {
+    if (Object.keys(ReminderFrequencyOptions).includes(frequency)) {
       await this.usersService.updateByChatId(chatId, {
-        reminderFrequency: data as ReminderFrequency,
+        reminderFrequency: frequency,
       });
-      await ctx.reply(
-        `מעכשיו אשלח מילה חדשה ${ReminderFrequencyOptions[data].text}`,
-      );
+      if (frequency === ReminderFrequency.NEVER) {
+        await ctx.reply('אפסיק לשלוח לך מילים לתרגול');
+      } else {
+        await ctx.reply(
+          `מעכשיו אשלח מילה חדשה ${ReminderFrequencyOptions[data].text}`,
+        );
+      }
     }
   }
 }

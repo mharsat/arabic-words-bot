@@ -28,7 +28,7 @@ export class WordsService {
     return randomWord;
   }
 
-  getRandomWordMessage({ keepOrder = false }: { keepOrder?: boolean }) {
+  getRandomWordMessage({ keepOrder = false }: { keepOrder?: boolean } = {}) {
     const randomWord = keepOrder ? this.getNextWord() : this.getRandomWord();
     return this.generateWordMessage(randomWord);
   }

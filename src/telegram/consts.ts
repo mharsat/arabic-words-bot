@@ -11,6 +11,10 @@ export const ReminderFrequencyOptions = {
   },
   [ReminderFrequency.HOURLY]: {
     text: 'כל שעה',
-    emoji: '🧞‍♂️ ﷽',
+    emoji: '🧞‍♂️',
+  },
+  [ReminderFrequency.NEVER]: {
+    text: 'צריך הפסקה',
+    emoji: '🧘🏻‍♂️',
   },
 };

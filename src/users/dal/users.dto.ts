@@ -4,6 +4,7 @@ export enum ReminderFrequency {
   DAILY = 'DAILY',
   THREE_TIMES_A_DAY = 'THREE_TIMES_A_DAY',
   HOURLY = 'HOURLY',
+  NEVER = 'NEVER',
 }
 
 export class CreateUserDto {
