@@ -220,48 +220,48 @@
         "hebrew": "הבדל"
     },
     {
-        "transliteration": "شكِل",
-        "arabic": "שכל",
+        "transliteration": "שכל",
+        "arabic": "شكِل",
         "hebrew": "אופן, צורה"
     },
     {
-        "transliteration": "عامّ",
-        "arabic": "עאם",
+        "transliteration": "עאם",
+        "arabic": "عامّ",
         "hebrew": "כללי"
     },
     {
-        "transliteration": "بشِكْل عامّ",
-        "arabic": "בשכל עאם",
+        "transliteration": "בשכל עאם",
+        "arabic": "بشِكْل عامّ",
         "hebrew": "באופן כללי"
     },
     {
-        "transliteration": "وَاضِح",
-        "arabic": "ואצ'ח",
+        "transliteration": "ואצ'ח",
+        "arabic": "وَاضِح",
         "hebrew": "ברור"
     },
     {
-        "transliteration": "ضيف",
-        "arabic": "צ'יף",
+        "transliteration": "צ'יף",
+        "arabic": "ضيف",
         "hebrew": "אורח"
     },
     {
-        "transliteration": "جُمْلِة",
-        "arabic": "ג'מלה",
+        "transliteration": "ג'מלה",
+        "arabic": "جُمْلِة",
         "hebrew": "משפט"
     },
     {
-        "transliteration": "سَطْر",
-        "arabic": "סטר",
+        "transliteration": "סטר",
+        "arabic": "سَطْر",
         "hebrew": "שורה"
     },
     {
-        "transliteration": "ذَكِي",
-        "arabic": "ד'כי",
+        "transliteration": "ד'כי",
+        "arabic": "ذَكِي",
         "hebrew": "חכם, טעים"
     },
     {
-        "transliteration": "صاحِب / صْحَاب",
-        "arabic": "צאחב / צחאב",
+        "transliteration": "צאחב / צחאב",
+        "arabic": "صاحِب / صْحَاب",
         "hebrew": "חבר / חברים"
     }
 ]
