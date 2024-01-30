@@ -263,5 +263,45 @@
         "transliteration": "צאחב / צחאב",
         "arabic": "صاحِب / صْحَاب",
         "hebrew": "חבר / חברים"
+    },
+    {
+        "arabic": "بسيط",
+        "transliteration": "בסיט",
+        "hebrew": "פשוט"
+    },
+    {
+        "arabic": "عشان",
+        "transliteration": "עשאן",
+        "hebrew": "בגלל"
+    },
+    {
+        "arabic": "عشان هيك",
+        "transliteration": "עשאן היכ",
+        "hebrew": "לכן"
+    },
+    {
+        "arabic": "مشكلة / مشاكل",
+        "transliteration": "משכלה / משאכל",
+        "hebrew": "בעיה / בעיות"
+    },
+    {
+        "arabic": "سؤال / أسئلة",
+        "transliteration": "סואל / אסאלה",
+        "hebrew": "שאלה / שאלות"
+    },
+    {
+        "arabic": "جواب / أجوبة",
+        "transliteration": " ג'ואב / אג'ובה",
+        "hebrew": "תשובה / תשובות"
+    },
+    {
+        "arabic": "اذا",
+        "transliteration": " אד'א",
+        "hebrew": "אם, האם"
+    },
+    {
+        "arabic": "تمرين",
+        "transliteration": "תמרין",
+        "hebrew": "תרגיל"
     }
 ]
