@@ -291,17 +291,119 @@
     },
     {
         "arabic": "جواب / أجوبة",
-        "transliteration": " ג'ואב / אג'ובה",
+        "transliteration": "ג'ואב / אג'ובה",
         "hebrew": "תשובה / תשובות"
     },
     {
         "arabic": "اذا",
-        "transliteration": " אד'א",
+        "transliteration": "אד'א",
         "hebrew": "אם, האם"
     },
     {
         "arabic": "تمرين",
         "transliteration": "תמרין",
         "hebrew": "תרגיל"
+    },
+    {
+        "arabic": "سِيعَة/ساعَة",
+        "hebrew": "שעה"
+    },
+    {
+        "arabic": "بَلَّش",
+        "hebrew": "התחיל"
+    },
+    {
+        "arabic": "غَرِيب",
+        "hebrew": "מוזר, זר"
+    },
+    {
+        "arabic": "قال, يقُول",
+        "hebrew": "אמר \\(עבר\\), אומר/יאמר \\(הווה/עתיד\\)"
+    },
+    {
+        "arabic": "صَحِيفِة",
+        "hebrew": "עיתון"
+    },
+    {
+        "arabic": "رَقْم/أرقام",
+        "hebrew": "מספר/מספרים"
+    },
+    {
+        "arabic": "مَحَلّ",
+        "hebrew": "מקום  \\(וגם\\: חנות\\)"
+    },
+    {
+        "arabic": "مُهِمّ",
+        "hebrew": "חשוב \\(וגם\\: מעניין\\)"
+    },
+    {
+        "arabic": "عيلِة",
+        "hebrew": "משפחה"
+    },
+    {
+        "arabic": "المفضل",
+        "hebrew": "מועדף"
+    },
+    {
+        "arabic": "راح",
+        "hebrew": "הלך"
+    },
+    {
+        "arabic": "تزلج",
+        "hebrew": "גלישה על השלג"
+    },
+    {
+        "arabic": "غالي",
+        "hebrew": "יקר"
+    },
+    {
+        "arabic": "متحف",
+        "hebrew": "מוזיאון"
+    },
+    {
+        "arabic": "من زمان",
+        "hebrew": "מזמן"
+    },
+    {
+        "arabic": "بتحب",
+        "hebrew": "אוהב"
+    },
+    {
+        "arabic": "رياضة",
+        "hebrew": "ספורט"
+    },
+    {
+        "arabic": "مع بعض",
+        "hebrew": "ביחד"
+    },
+    {
+        "hebrew": "אתגר",
+        "arabic": "تحدي",
+        "transliteration": "תחדי"
+    },
+    {
+        "hebrew": "ברכות",
+        "arabic": "تحيات",
+        "transliteration": "תחיאת"
+    },
+    {
+        "hebrew": "יודע, מכיר",
+        "arabic": "اعرف",
+        "transliteration": "אערף"
+    },
+    {
+        "hebrew": "ללכת",
+        "arabic": "اروح",
+        "transliteration": "ארוח"
+    },
+    {
+        "hebrew": " וטרינר/ית",
+        "arabic": "بيطري/ة",
+        "transliteration": "ביטרי/ה"
+    },
+    {
+        "hebrew": "רוצה להיות",
+        "arabic": "بدي اصير",
+        "transliteration": "בדי אסיר"
     }
 ]

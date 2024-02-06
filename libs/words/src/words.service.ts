@@ -34,7 +34,9 @@ export class WordsService {
   }
 
   generateWordMessage(word: Word) {
-    const message = `*${word.arabic}* \\- ${word.transliteration}
+    const message = `*${word.arabic}*${
+      word.transliteration ? ` \\- ${word.transliteration}` : ''
+    }
 
 ||${word.hebrew}||`;
 
