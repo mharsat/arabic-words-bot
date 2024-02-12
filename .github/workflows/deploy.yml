@@ -35,5 +35,5 @@ jobs:
       - name: Deploy Docker containers on remote server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} << 'ENDSSH'
-          docker run -e ARABIC_WORDS_TELEGRAM_BOT_TOKEN=${{ secrets.ARABIC_WORDS_TELEGRAM_BOT_TOKEN }} -e MONGODB_URI=${{ secrets.MONGODB_URI }} arabic-words-bot:latest
+          docker run -e ARABIC_WORDS_TELEGRAM_BOT_TOKEN=${{ secrets.ARABIC_WORDS_TELEGRAM_BOT_TOKEN }} -e MONGODB_URI=${{ secrets.MONGODB_URI }} --detach arabic-words-bot:latest
           ENDSSH
