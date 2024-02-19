@@ -397,7 +397,7 @@
         "transliteration": "ארוח"
     },
     {
-        "hebrew": " וטרינר/ית",
+        "hebrew": "וטרינר/ית",
         "arabic": "بيطري/ة",
         "transliteration": "ביטרי/ה"
     },
@@ -421,7 +421,7 @@
         "hebrew": "מגיע"
     },
     {
-        "arabic": "زَيّ=مِثْل",
+        "arabic": "زَيّ,مِثْل",
         "hebrew": "כמו"
     },
     {
@@ -522,5 +522,60 @@
     {
         "arabic": "شو مالك؟!",
         "hebrew": "מה יש לך?"
+    },
+    {
+        "arabic": "رحت",
+        "transliteration": "רוחת",
+        "hebrew": "הלכתי"
+    },
+    {
+        "arabic": "صحن",
+        "transliteration": "צ'חן",
+        "hebrew": "צלחת"
+    },
+    {
+        "arabic": "معلقة",
+        "transliteration": "מעלקה",
+        "hebrew": "כפית"
+    },
+    {
+        "arabic": "شوكة",
+        "transliteration": "שוכה",
+        "hebrew": "מזלג"
+    },
+    {
+        "arabic": "تطعيم",
+        "transliteration": "תטעים",
+        "hebrew": "חיסון"
+    },
+    {
+        "arabic": "صينّية",
+        "transliteration": "ציניה",
+        "hebrew": "מגש"
+    },
+    {
+        "arabic": "ورق",
+        "transliteration": "ורק'",
+        "hebrew": "עלים/דף"
+    },
+    {
+        "arabic": "نيّ/ة",
+        "transliteration": "ניי/ה",
+        "hebrew": "נא \\(למשל: כבה נייה\\)"
+    },
+    {
+        "arabic": "مقلي/ة",
+        "transliteration": "מקלי/ה",
+        "hebrew": "מטוגן"
+    },
+    {
+        "arabic": "وجبة",
+        "transliteration": "ווג'בה",
+        "hebrew": "מנה"
+    },
+    {
+        "arabic": "لبن",
+        "transliteration": "לבן",
+        "hebrew": "יוגורט"
     }
 ]
