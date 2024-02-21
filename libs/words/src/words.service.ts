@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import words from './words.json';
 import { Word } from './words.types';
 
+const NEW_WORDS_CUTOFF = 60;
+
 @Injectable()
 export class WordsService {
   // shuffeled words help us avoid repeating words for ordered use cases
@@ -12,7 +14,7 @@ export class WordsService {
   }
 
   shuffleWords() {
-    return [...words].sort(() => Math.random() - 0.5);
+    return [...words].slice(NEW_WORDS_CUTOFF).sort(() => Math.random() - 0.5);
   }
 
   getNextWord(): Word {
