@@ -35,12 +35,22 @@ export class WordsService {
     return this.generateWordMessage(randomWord);
   }
 
+  escapeString(str?: string) {
+    return str?.replace(/[!-\/:-@\[-`{-~]/g, '\\$&');
+  }
+
   generateWordMessage(word: Word) {
-    const message = `*${word.arabic}*${
-      word.transliteration ? ` \\- ${word.transliteration}` : ''
+    const { arabic, transliteration, hebrew } = word;
+    const [escapedArabic, escapedTransliteration, escapedHebrew] = [
+      arabic,
+      transliteration,
+      hebrew,
+    ].map(this.escapeString);
+    const message = `*${escapedArabic}*${
+      transliteration ? ` \\- ${escapedTransliteration}` : ''
     }
 
-||${word.hebrew}||`;
+||${escapedHebrew}||`;
 
     return message;
   }
