@@ -625,5 +625,90 @@
     {
         "arabic": "لون / أَلْوَان",
         "hebrew": "צבע / צבעים"
+    },
+    {
+        "arabic": "شركة",
+        "transliteration": "שִרְכֵּה",
+        "hebrew": "חֶבְרָה"
+    },
+    {
+        "arabic": "لازم",
+        "transliteration": "לַאזֵם",
+        "hebrew": "צריך, חייב"
+    },
+    {
+        "arabic": "خضرة",
+        "transliteration": "חֻ׳צְ׳רַה",
+        "hebrew": "ירקות"
+    },
+    {
+        "arabic": "فاكهة / فواكه",
+        "transliteration": "פַאכִּהַה / פַוַאכֵּהְ",
+        "hebrew": "פְּרִי / פֵּירוֹת"
+    },
+    {
+        "arabic": "شكل",
+        "transliteration": "שִכֵּל",
+        "hebrew": "צוּרָה"
+    },
+    {
+        "arabic": "عَصِير",
+        "transliteration": "עַצִיר",
+        "hebrew": "מִיץ"
+    },
+    {
+        "arabic": "مالح",
+        "transliteration": "מַאלֵח",
+        "hebrew": "מלוח"
+    },
+    {
+        "arabic": "حامض",
+        "transliteration": "חַאמֵץ׳",
+        "hebrew": "חמוץ, לימון"
+    },
+    {
+        "arabic": "شبعان",
+        "transliteration": "שַבְּעַאן",
+        "hebrew": "שָׂבֵעַ"
+    },
+    {
+        "arabic": "جُوعَان",
+        "transliteration": "ג׳וֹעַאן",
+        "hebrew": "רָעֵב"
+    },
+    {
+        "arabic": "بَرَّاد",
+        "transliteration": "בַּרַّאד",
+        "hebrew": "מקרר"
+    },
+    {
+        "arabic": "نوع / أنواع",
+        "transliteration": "נוֹע / אַנְוַאע",
+        "hebrew": "סוג / סוגים"
+    },
+    {
+        "arabic": "صحّ / صحيح / مزبوط",
+        "transliteration": "צַחّ / צַחִיח / מַזְבּוּט",
+        "hebrew": "נכון"
+    },
+    {
+        "arabic": "حسن",
+        "transliteration": "חַסַן",
+        "hebrew": "טוֹב"
+    },
+    {
+        "arabic": "أَحْسَن",
+        "transliteration": "אַחְסַן",
+        "hebrew": "יותר טוב, עדיף"
+    },
+    {
+        "arabic": "طيّب",
+        "transliteration": "טַיֵّבּ",
+        "hebrew": "טוב, בסדר, טעים"
+    },
+    {
+        "arabic": "مقلي",
+        "transliteration": "מקלי",
+        "hebrew": "מטוגן"
     }
 ]
