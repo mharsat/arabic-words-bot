@@ -554,9 +554,9 @@
         "hebrew": "מגש"
     },
     {
-        "arabic": "ورق",
-        "transliteration": "ורק'",
-        "hebrew": "עלים/דף"
+        "arabic": "ورقة / ورق",
+        "transliteration": "וַרַקַה / וַרַק",
+        "hebrew": "עלה,דף / עלים,דפים"
     },
     {
         "arabic": "نيّ/ة",
@@ -707,8 +707,52 @@
         "hebrew": "טוב, בסדר, טעים"
     },
     {
-        "arabic": "مقلي",
-        "transliteration": "מקלי",
-        "hebrew": "מטוגן"
+        "arabic": "غُنَّاية / غْنَانِي",
+        "transliteration": "עֻ׳נָّאיֵה / עְ׳נָאנִי",
+        "hebrew": "שיר / שירים"
+    },
+    {
+        "arabic": "جُزْدَان",
+        "transliteration": "גֻ׳זְדַאן",
+        "hebrew": "ארנק"
+    },
+    {
+        "arabic": "إسْتِعْمَال",
+        "transliteration": "אִסְתִעְמַאל",
+        "hebrew": "שימוש"
+    },
+    {
+        "arabic": "طَعْبًا",
+        "transliteration": "טַבְּעַן",
+        "hebrew": "באופן טבעי, כמובן ש"
+    },
+    {
+        "arabic": "عَامَّةً",
+        "hebrew": "באופן כללי"
+    },
+    {
+        "arabic": "باص",
+        "transliteration": "בַּאץ",
+        "hebrew": "אוטובוס"
+    },
+    {
+        "arabic": "عَمَلِيِّة",
+        "transliteration": "עַמַלִיֵّה",
+        "hebrew": "operation, ניתוח (רפואי), מבצע (צבאי)"
+    },
+    {
+        "arabic": "مُقَابَلِة",
+        "transliteration": "מֻקַאבַּלֵה",
+        "hebrew": "מפגש, ראיון (בטלוויזיה, בעבודה)"
+    },
+    {
+        "arabic": "الْحَقّ مَعَك",
+        "transliteration": "אִלְחַקّ מַעַכּ",
+        "hebrew": "אתה צודק (מילולית: האמת איתך)"
+    },
+    {
+        "arabic": "الْحَقّ عَليك",
+        "transliteration": "אִלְחַקّ עַלֵיכּ",
+        "hebrew": "אתה טועה (האמת עליך/האמת נגדך)"
     }
 ]
