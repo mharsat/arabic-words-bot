@@ -21,7 +21,7 @@ export class BotStart {
       'מרחבא 🪬\nאני אשלח לך מידי יום מילה לתרגול בערבית',
     );
     await ctx.reply('הנה המילה הראשונה שלך:');
-    const firstWordMessage = this.wordsService.getRandomWordMessage();
+    const firstWordMessage = await this.wordsService.getRandomWordMessage();
     await new Promise((resolve) => setTimeout(resolve, 2000));
     await ctx.replyWithMarkdownV2(firstWordMessage);
 
@@ -34,7 +34,7 @@ export class BotStart {
 
   @Command('new_word')
   async sendNewWord(@Ctx() ctx: TelegrafContext) {
-    const wordMessage = this.wordsService.getRandomWordMessage();
+    const wordMessage = await this.wordsService.getRandomWordMessage();
     await ctx.replyWithMarkdownV2(wordMessage);
   }
 

@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common';
 import { WordsService } from './words.service';
+import { WordsDalService } from './dal/words.dal';
+import { MongooseModule } from '@nestjs/mongoose';
+import { WordSchema } from './dal/words.schema';
 
 @Module({
-  providers: [WordsService],
+  imports: [MongooseModule.forFeature([{ name: 'Word', schema: WordSchema }])],
+  providers: [WordsService, WordsDalService],
   exports: [WordsService],
 })
 export class WordsModule {}

@@ -36,7 +36,9 @@ export class RemindersService {
   async sendWordToAllSubscribers() {
     this.logger.log(`Sending word to subscribed users`);
     const users = await this.usersService.getAll();
-    const message = this.wordsService.getRandomWordMessage({ keepOrder: true });
+    const message = await this.wordsService.getRandomWordMessage({
+      keepOrder: true,
+    });
 
     await Promise.allSettled(
       users.map(async (user) => {

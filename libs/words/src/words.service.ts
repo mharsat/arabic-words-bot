@@ -1,45 +1,54 @@
 import { Injectable } from '@nestjs/common';
-import words from './words.json';
-import { Word } from './words.types';
+import { Word } from './dal/words.schema';
+import { WordsDalService } from './dal/words.dal';
 
-const NEW_WORDS_CUTOFF = 60;
+const NEW_WORDS_CUTOFF = 80;
 
 @Injectable()
 export class WordsService {
   // shuffeled words help us avoid repeating words for ordered use cases
   private shuffeledWords: Word[];
 
-  constructor() {
-    this.shuffeledWords = this.shuffleWords();
+  constructor(private readonly wordsDalService: WordsDalService) {}
+
+  async onApplicationBootstrap() {
+    this.shuffeledWords = await this.shuffleWords();
+    console.log(this.shuffeledWords.length);
   }
 
-  shuffleWords() {
+  private async shuffleWords() {
+    const words = await this.wordsDalService.findAll();
     return [...words].slice(NEW_WORDS_CUTOFF).sort(() => Math.random() - 0.5);
   }
 
-  getNextWord(): Word {
+  private async getNextWord(): Promise<Word> {
     if (this.shuffeledWords.length === 0) {
-      this.shuffeledWords = this.shuffleWords();
+      this.shuffeledWords = await this.shuffleWords();
     }
     const randomWord = this.shuffeledWords.pop();
     return randomWord;
   }
 
-  getRandomWord() {
+  private async getRandomWord() {
+    const words = await this.wordsDalService.findAll();
     const randomWord = words[Math.floor(Math.random() * words.length)];
     return randomWord;
   }
 
-  getRandomWordMessage({ keepOrder = false }: { keepOrder?: boolean } = {}) {
-    const randomWord = keepOrder ? this.getNextWord() : this.getRandomWord();
+  async getRandomWordMessage({
+    keepOrder = false,
+  }: { keepOrder?: boolean } = {}) {
+    const randomWord = keepOrder
+      ? await this.getNextWord()
+      : await this.getRandomWord();
     return this.generateWordMessage(randomWord);
   }
 
-  escapeString(str?: string) {
+  private escapeString(str?: string) {
     return str?.replace(/[!-\/:-@\[-`{-~]/g, '\\$&');
   }
 
-  generateWordMessage(word: Word) {
+  private generateWordMessage(word: Word) {
     const { arabic, transliteration, hebrew } = word;
     const [escapedArabic, escapedTransliteration, escapedHebrew] = [
       arabic,
