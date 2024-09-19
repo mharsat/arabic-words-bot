@@ -42,10 +42,16 @@ export class RemindersService {
 
     await Promise.allSettled(
       users.map(async (user) => {
-        const { chatId, reminderFrequency } = user;
-        const shouldRemind = this.shouldRemindUser(reminderFrequency);
-        if (shouldRemind) {
-          await this.telegramService.sendMarkdownMessage(chatId, message);
+        try {
+          const { chatId, reminderFrequency } = user;
+          const shouldRemind = this.shouldRemindUser(reminderFrequency);
+          if (shouldRemind) {
+            await this.telegramService.sendMarkdownMessage(chatId, message);
+          }
+        } catch (error) {
+          this.logger.error(
+            `Failed to send message to user ${user.id}: ${error.message}`,
+          );
         }
       }),
     );
