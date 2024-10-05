@@ -26,7 +26,15 @@ export class BotStart {
     await ctx.replyWithMarkdownV2(firstWordMessage);
 
     try {
-      await this.usersService.create({ chatId: ctx.chat.id });
+      const { chat } = ctx;
+      const name =
+        chat.type === 'private'
+          ? { firstName: chat.first_name, lastName: chat.last_name }
+          : { firstName: chat.title };
+      await this.usersService.create({
+        chatId: ctx.chat.id,
+        ...name,
+      });
     } catch (error) {
       this.logger.warn(error);
     }

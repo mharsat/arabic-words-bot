@@ -28,7 +28,6 @@ export class UsersService {
     } catch (error) {
       this.logger.error(`[UsersService] failed to get all users`, error);
     }
-    return this.usersDal.findAll();
   }
 
   async updateByChatId(

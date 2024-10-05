@@ -1,4 +1,11 @@
-import { IsEnum, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
+import {
+  IsBoolean,
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export enum ReminderFrequency {
   DAILY = 'DAILY',
@@ -11,10 +18,30 @@ export class CreateUserDto {
   @IsNotEmpty()
   @IsNumber()
   chatId: number;
+
+  @IsOptional()
+  @IsString()
+  firstName?: string;
+
+  @IsOptional()
+  @IsString()
+  lastName?: string;
 }
 
 export class UpdateUserDto {
   @IsOptional()
   @IsEnum(ReminderFrequency)
   reminderFrequency?: ReminderFrequency;
+
+  @IsOptional()
+  @IsString()
+  firstName?: string;
+
+  @IsOptional()
+  @IsString()
+  lastName?: string;
+
+  @IsOptional()
+  @IsBoolean()
+  isBlocked?: boolean;
 }

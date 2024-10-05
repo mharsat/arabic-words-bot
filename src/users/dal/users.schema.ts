@@ -10,12 +10,21 @@ export class User {
   @Prop({ required: true, unique: true })
   chatId: number;
 
+  @Prop()
+  firstName: string;
+
+  @Prop()
+  lastName: string;
+
   @Prop({
     type: String,
     enum: Object.values(ReminderFrequency),
     default: ReminderFrequency.DAILY,
   })
   reminderFrequency: ReminderFrequency;
+
+  @Prop({ default: false })
+  isBlocked: boolean;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

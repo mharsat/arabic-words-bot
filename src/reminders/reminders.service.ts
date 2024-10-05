@@ -46,7 +46,16 @@ export class RemindersService {
           const { chatId, reminderFrequency } = user;
           const shouldRemind = this.shouldRemindUser(reminderFrequency);
           if (shouldRemind) {
-            await this.telegramService.sendMarkdownMessage(chatId, message);
+            const { success, reason } =
+              await this.telegramService.sendMarkdownMessage(chatId, message);
+            if (!success) {
+              this.logger.warn(`Failed to send message to user ${user.id}`);
+              if (reason === 'blocked') {
+                await this.usersService.updateByChatId(chatId, {
+                  isBlocked: true,
+                });
+              }
+            }
           }
         } catch (error) {
           this.logger.error(

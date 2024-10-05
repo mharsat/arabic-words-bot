@@ -14,9 +14,25 @@ export class TelegramService {
 
   private readonly logger = new Logger(TelegramService.name);
 
-  async sendMarkdownMessage(chatId: number, message: string) {
-    this.bot.telegram.sendMessage(chatId, message, {
-      parse_mode: 'MarkdownV2',
-    });
+  async sendMarkdownMessage(
+    chatId: number,
+    message: string,
+  ): Promise<{ success: boolean; reason?: 'blocked' | 'error' }> {
+    try {
+      await this.bot.telegram.sendMessage(chatId, message, {
+        parse_mode: 'MarkdownV2',
+      });
+      return { success: true };
+    } catch (error) {
+      if (error.description === 'Forbidden: bot was blocked by the user') {
+        this.logger.warn(`User with chatId ${chatId} blocked the bot.`);
+        return { success: false, reason: 'blocked' };
+      } else {
+        this.logger.error(
+          `Failed to send message to chat ${chatId}: ${error.message}`,
+        );
+        return { success: false, reason: 'error' };
+      }
+    }
   }
 }
