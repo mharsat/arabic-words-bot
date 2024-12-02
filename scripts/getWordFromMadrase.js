@@ -26,9 +26,7 @@ const getWords = async (words) => {
       } catch (error) {
         console.log(`error getting the word ${word}`, error);
         return {
-          arabic: '',
-          hebrew: '',
-          transliteration: '',
+          arabic: word,
         };
       }
     }),

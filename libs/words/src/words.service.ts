@@ -3,6 +3,7 @@ import { Word } from './dal/words.schema';
 import { WordsDalService } from './dal/words.dal';
 
 const NEW_WORDS_CUTOFF = 80;
+const SHUFFLE_START_DATE = '2024-11-01';
 
 @Injectable()
 export class WordsService {
@@ -17,7 +18,9 @@ export class WordsService {
   }
 
   private async shuffleWords() {
-    const words = await this.wordsDalService.findAll();
+    const words = await this.wordsDalService.findAll({
+      fromDate: new Date(SHUFFLE_START_DATE),
+    });
     return [...words].slice(NEW_WORDS_CUTOFF).sort(() => Math.random() - 0.5);
   }
 
@@ -30,7 +33,9 @@ export class WordsService {
   }
 
   private async getRandomWord() {
-    const words = await this.wordsDalService.findAll();
+    const words = await this.wordsDalService.findAll({
+      fromDate: new Date(SHUFFLE_START_DATE),
+    });
     const randomWord = words[Math.floor(Math.random() * words.length)];
     return randomWord;
   }
