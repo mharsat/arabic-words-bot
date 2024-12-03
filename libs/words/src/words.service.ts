@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Word } from './dal/words.schema';
 import { WordsDalService } from './dal/words.dal';
 
@@ -9,16 +9,10 @@ export class WordsService {
   // shuffeled words help us avoid repeating words for ordered use cases
   private shuffeledWords: Word[];
 
-  constructor(
-    private readonly wordsDalService: WordsDalService,
-    private readonly logger: Logger,
-  ) {}
+  constructor(private readonly wordsDalService: WordsDalService) {}
 
   async onApplicationBootstrap() {
     this.shuffeledWords = await this.shuffleWords();
-    this.logger.log(
-      `[WordsService] loaded ${this.shuffeledWords.length} words`,
-    );
   }
 
   private async shuffleWords() {
