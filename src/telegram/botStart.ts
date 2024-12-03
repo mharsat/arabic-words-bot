@@ -42,7 +42,9 @@ export class BotStart {
 
   @Command('new_word')
   async sendNewWord(@Ctx() ctx: TelegrafContext) {
-    const wordMessage = await this.wordsService.getRandomWordMessage();
+    const wordMessage = await this.wordsService.getRandomWordMessage({
+      keepOrder: true,
+    });
     await ctx.replyWithMarkdownV2(wordMessage);
   }
 
