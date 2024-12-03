@@ -2,7 +2,6 @@ import { Injectable, LoggerService } from '@nestjs/common';
 import { Word } from './dal/words.schema';
 import { WordsDalService } from './dal/words.dal';
 
-const NEW_WORDS_CUTOFF = 80;
 const SHUFFLE_START_DATE = '2024-11-01';
 
 @Injectable()
@@ -24,7 +23,7 @@ export class WordsService {
     const words = await this.wordsDalService.findAll({
       fromDate: new Date(SHUFFLE_START_DATE),
     });
-    return [...words].slice(NEW_WORDS_CUTOFF).sort(() => Math.random() - 0.5);
+    return [...words].sort(() => Math.random() - 0.5);
   }
 
   private async getNextWord(): Promise<Word> {
